@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080914"><title>F64 × FATMAN 2.0 Giveaway</title>
+<style>
+:root{--bg:#080914;--card:#121629;--card2:#191f36;--line:#303956;--gold:#ffc96b;--pink:#ff4f9a;--cyan:#69e3ed;--txt:#f7f7fc;--muted:#aab1c7;--green:#54e2a0}
+*{box-sizing:border-box}body{margin:0;color:var(--txt);font:15px/1.55 Inter,system-ui,Arial;background:radial-gradient(ellipse at 15% 0%,#312047 0,transparent 38%),radial-gradient(ellipse at 100% 25%,#122f48 0,transparent 35%),var(--bg)}
+.wrap{max-width:1080px;margin:auto;padding:22px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px}.logo{font-size:24px;font-weight:1000;letter-spacing:2px}.logo span{color:var(--pink)}.tag{border:1px solid #73503f;color:var(--gold);border-radius:30px;padding:7px 12px;font-size:11px;font-weight:800;letter-spacing:1px}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;margin:26px 0}.intro,.prize,.panel{border:1px solid var(--line);border-radius:24px;background:linear-gradient(145deg,#1b2038ed,#101424f5);box-shadow:0 18px 55px #0006}.intro{padding:clamp(22px,4vw,42px);position:relative;overflow:hidden}.eyebrow{color:var(--cyan);font-weight:900;font-size:11px;letter-spacing:2.5px}.intro h1{font-size:clamp(38px,6vw,66px);line-height:.98;margin:16px 0}.intro h1 span{background:linear-gradient(90deg,var(--gold),var(--pink));color:transparent;background-clip:text}.intro p{color:var(--muted);max-width:540px}.chips{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0}.chips b{background:#ffffff0c;border:1px solid #ffffff18;border-radius:30px;padding:8px 12px;font-size:12px}.prize{padding:24px;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;background:linear-gradient(145deg,#351d42,#141a30)}.prize img{width:min(220px,75%);height:250px;object-fit:contain;filter:drop-shadow(12px 16px 12px #0009);transition:.3s}.prize img:hover{transform:translateY(-5px) rotate(1deg)}.prize h2{margin:12px 0 0}.prize p{margin:4px;color:var(--muted);font-size:12px}
+.countdown{margin:18px 0 0;padding:14px 16px;border:1px solid #8d4b76;border-radius:16px;background:linear-gradient(100deg,#30172f,#171a31);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.countdown strong{color:var(--gold);font-size:12px;letter-spacing:1.5px}.clock{display:flex;gap:8px}.timebox{min-width:58px;text-align:center;padding:7px 9px;border-radius:10px;background:#080b18;border:1px solid #ffffff1c}.timebox b{display:block;font-size:21px;color:var(--cyan);font-variant-numeric:tabular-nums}.timebox small{font-size:9px;color:var(--muted);letter-spacing:1px}.closed{display:none;margin:18px 0;padding:25px;text-align:center;border:1px solid #ff4f9a;border-radius:18px;background:linear-gradient(130deg,#35152b,#17182d)}.closed h2{font-size:clamp(28px,5vw,42px);margin:0;color:#ff75ad}.closed p{color:#e2cbd8}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}.stat{padding:12px;text-align:center;background:#090e1d;border:1px solid var(--line);border-radius:15px}.stat strong{display:block;color:var(--gold);font-size:22px}.stat small{color:var(--muted)}
+.tabs{display:flex;gap:9px;margin:20px 0;flex-wrap:wrap}.tab,button{border:0;border-radius:12px;padding:12px 17px;font-weight:850;cursor:pointer}.tab{background:#1b2238;color:#c7cce0;border:1px solid var(--line)}.tab.active,.primary{background:linear-gradient(100deg,var(--gold),#ff9d65);color:#24170c}.section{display:none}.section.active{display:block}.panel{padding:clamp(18px,3vw,28px);margin-bottom:16px}.panel h2{margin:0}.sub{color:var(--muted);margin:5px 0 18px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{margin:10px 0}.field label{display:block;font-weight:750;font-size:13px;margin-bottom:6px;color:#d9dced}input,select{width:100%;padding:14px;border-radius:12px;background:#090e1c;border:1px solid #39425f;color:white;font:inherit;outline:none}input:focus,select:focus{border-color:var(--cyan);box-shadow:0 0 0 3px #69e3ed18}.q{padding:17px;margin:14px 0;border:1px solid var(--line);border-radius:16px;background:linear-gradient(120deg,#0c1222,#14192b)}.qtop{display:flex;justify-content:space-between;gap:10px;color:var(--cyan);font-size:11px;font-weight:900;letter-spacing:1px}.q h3{font-size:16px;margin:8px 0 12px}.opt{display:flex;gap:10px;align-items:center;padding:10px 12px;margin:7px 0;border:1px solid #303956;border-radius:11px;color:#dfe4f2;cursor:pointer}.opt:has(input:checked){border-color:var(--pink);background:#ff4f9a14}.opt input{width:auto;accent-color:var(--pink)}.progress{height:7px;background:#30364b;border-radius:10px;overflow:hidden;margin:12px 0}.progress div{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--pink));transition:.25s}.primary{width:100%;font-size:15px;padding:16px;margin-top:12px}.primary:disabled{opacity:.55;cursor:wait}.success,.error{display:none;padding:17px;border-radius:14px;margin-top:14px}.success{background:#0d3027;border:1px solid #287b5b;color:#c1ffe1}.error{background:#391b27;border:1px solid #8e3855;color:#ffd2df}.note{font-size:12px;color:var(--muted)}.rules li{margin:9px 0;color:#d6dbea}
+
+.timerbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:14px 0;padding:12px 14px;border:1px solid #39425f;border-radius:13px;background:#090e1c}
+.timerbar strong{color:var(--gold);font-variant-numeric:tabular-nums;font-size:22px}
+.timerbar.warning strong{color:#ff759c}
+.qmeta{display:flex;gap:8px;flex-wrap:wrap}
+.pill{font-size:10px;font-weight:900;letter-spacing:.8px;padding:5px 9px;border-radius:20px;background:#ffffff0d;border:1px solid #ffffff20;color:var(--cyan)}
+.answerbox{margin-top:12px}
+.answerbox input{font-size:16px}
+.quiznav{display:flex;gap:10px;align-items:center}
+.quiznav .primary{margin-top:0}
+.qfeedback{font-size:12px;color:var(--muted);margin-top:8px}
+.lang-choice{display:flex;gap:10px;margin:14px 0;flex-wrap:wrap}.lang-btn{flex:1;min-width:130px;background:#090e1c;color:#e9edfa;border:1px solid #39425f;padding:13px;border-radius:12px}.lang-btn.active{border-color:var(--gold);background:linear-gradient(100deg,#ffc96b22,#ff4f9a18);color:var(--gold)}
+
+@media(max-width:720px){.wrap{padding:14px}.hero{grid-template-columns:1fr}.prize img{height:220px}.grid{grid-template-columns:1fr}.intro{padding:24px}.stats{gap:6px}.stat{padding:9px 3px}.stat strong{font-size:19px}}
+
+/* F64 quiz protection: discourages casual copying and makes shared captures identifiable. */
+#quiz .q{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;position:relative;overflow:hidden}
+#quiz .q input,#quiz .q textarea{-webkit-user-select:text;user-select:text;-webkit-touch-callout:default}
+#quiz .q .quiz-watermark{position:absolute;inset:0;z-index:4;pointer-events:none;display:flex;align-items:center;justify-content:center;text-align:center;opacity:.105;color:#fff;font-size:clamp(15px,3.2vw,27px);font-weight:1000;letter-spacing:2px;transform:rotate(-23deg);white-space:normal;text-shadow:0 1px 4px #000;}
+#quiz .q:after{content:"F64 • OFFICIAL GIVEAWAY • ONE ATTEMPT";position:absolute;inset:0;pointer-events:none;z-index:3;display:flex;align-items:flex-end;justify-content:center;padding:12px;text-align:center;opacity:.12;color:#fff;font-size:10px;font-weight:900;letter-spacing:2px}
+@media print{#quiz,.countdown,.tabs{display:none!important}}
+</style></head><body><main class="wrap">
+<header class="top"><div class="logo">F<span>64</span></div><div class="tag">OFFICIAL COMMUNITY GIVEAWAY</div></header>
+<div class="hero"><section class="intro"><div class="eyebrow">F64 COMMUNITY PRESENTS</div><h1>YOUR NEXT<br><span>GK UPGRADE.</span></h1><p>Bring your passion for learning and get a chance to take home FATMAN 2.0. Join the F64 community giveaway and make this book yours!</p><div class="chips"><b>🎁 WIN FATMAN 2.0</b><b>📚 POWER UP YOUR GK</b><b>🔒 ONE ENTRY ONLY</b></div><div class="stats"><div class="stat"><strong>01</strong><small>Grand prize</small></div><div class="stat"><strong>05</strong><small>Quick questions</small></div><div class="stat"><strong>FREE</strong><small>Entry fee</small></div></div><div class="note">No purchase required · One entry per Telegram username · Hosted by F64</div><div class="countdown" id="countdown"><strong>⏳ ENTRIES CLOSE IN</strong><div class="clock"><div class="timebox"><b id="cdDays">--</b><small>DAYS</small></div><div class="timebox"><b id="cdHours">--</b><small>HRS</small></div><div class="timebox"><b id="cdMins">--</b><small>MIN</small></div><div class="timebox"><b id="cdSecs">--</b><small>SEC</small></div></div><span class="note">23 NOV · 6:00 PM IST</span></div></section>
+<aside class="prize"><div class="eyebrow">THE PRIZE YOU CAN WIN</div><img src="https://offer.parmarssc.in/assets/fatman-front.png" alt="Parmar SSC Fatman 2.0 GK GS Theory Book cover"><h2>FATMAN 2.0</h2><p>GK/GS Theory Book · 2nd Edition</p></aside></div>
+<nav class="tabs"><button class="tab active" data-tab="join">🚀 Enter giveaway</button><button class="tab" data-tab="rules">📜 Rules</button></nav>
+<section class="closed" id="closed"><h2>TIME OVER! ⏰</h2><p>F64 Giveaway entries are now closed.<br>Thank you for participating. Stay connected for the winner announcement!</p></section><section class="section active" id="join"><div class="panel"><h2>01 / Your details</h2><p class="sub">Use your real name and active Telegram username.</p><div class="grid"><div class="field"><label>YOUR NAME</label><input id="name" maxlength="60" placeholder="Enter your name" autocomplete="name"></div><div class="field"><label>TELEGRAM USERNAME</label><input id="telegram" maxlength="40" placeholder="@yourusername" autocomplete="off"></div></div><div class="field"><label>WHERE DID YOU FIND THIS GIVEAWAY?</label><select id="source"><option>F64 Telegram Channel</option><option>Friend</option><option>Other</option></select></div></div>
+<div class="panel"><div class="eyebrow">02 / YOUR GIVEAWAY ENTRY</div><h2>One quick step closer to FATMAN 2.0</h2><p class="sub">Take on 3 timed MCQs and 2 one-word GK questions based on SSC CGL previous-year papers. Good luck from Team F64!</p><div class="note" style="margin-bottom:12px">3 MCQs × 30 sec &nbsp;·&nbsp; 2 one-word answers × 90 sec &nbsp;·&nbsp; One round only</div><div class="progress"><div id="progress"></div></div><div class="note" id="progressText">Ready when you are · 5 questions</div><div id="quiz"><div class="q" id="quizStart"><h3>Ready for the F64 GK challenge?</h3><p class="sub">Choose your quiz language. Questions will appear in the language you select.</p><div class="lang-choice"><button class="lang-btn" type="button" data-lang="hi">हिन्दी</button><button class="lang-btn" type="button" data-lang="en">English</button></div><p class="note" id="langHint">Select Hindi or English to continue.</p><button class="primary" id="startQuiz" type="button" disabled>START QUIZ →</button></div></div><button class="primary" id="submit" style="display:none">SUBMIT MY ENTRY →</button><div class="success" id="success"></div><div class="error" id="error"></div><p class="note">By submitting, you agree that your name, Telegram username and quiz score may be used to manage this giveaway.</p></div></section>
+<section class="section" id="rules"><div class="panel rules"><h2>Giveaway rules</h2><ol><li>Entry is completely free. No purchase or payment is needed.</li><li>One entry per Telegram username. Duplicate entries are blocked by the server, not just by browser refresh.</li><li>Use a valid Telegram username so the F64 team can contact the winner.</li><li>Quiz score is recorded; unless separately announced, winners are selected by a fair random draw among eligible entries.</li><li>Winner announcement and closing date will be posted on F64 Telegram channel.</li><li>Never share OTPs, passwords or pay a fee to claim a prize.</li></ol><p class="note">Organizer: F64 · Prize: Parmar SSC FATMAN 2.0</p></div></section>
+</main><script>
+const CONFIG={BOOK_TITLE:"FATMAN 2.0",WINNERS:1,DEADLINE:"2026-11-23T18:00:00+05:30",API_URL:"https://script.google.com/macros/s/AKfycbxLLBH5iVW4jrB_FQ48dlMeVaiylsy510k7Qvg2OIxgJ4TIgLn0fchksWm7vgCJkRBA/exec"};
+// All questions are GK items based on reported SSC CGL previous-year papers.
+const questions=[
+ {type:"mcq",time:30,topic:"HISTORY",topicHi:"इतिहास",qEn:"Under Pitt’s India Act, 1784, which six-member body was created to supervise the Company’s political affairs?",qHi:"पिट्स इंडिया एक्ट, 1784 के तहत कंपनी के राजनीतिक मामलों की निगरानी के लिए किस छह-सदस्यीय निकाय का गठन किया गया था?",optsEn:["Board of Revenue","Board of Control","Council of India","Court of Proprietors"],optsHi:["राजस्व बोर्ड","नियंत्रण बोर्ड","भारत परिषद","प्रोप्राइटर्स न्यायालय"],correct:1,source:"SSC CGL Tier-I · 23 Sep 2025 Shift 3"},
+ {type:"mcq",time:30,topic:"POLITY",topicHi:"राजव्यवस्था",qEn:"Which Article of the Indian Constitution deals with the Finance Commission?",qHi:"भारतीय संविधान का कौन-सा अनुच्छेद वित्त आयोग से संबंधित है?",optsEn:["Article 263","Article 280","Article 324","Article 356"],optsHi:["अनुच्छेद 263","अनुच्छेद 280","अनुच्छेद 324","अनुच्छेद 356"],correct:1,source:"SSC CGL Tier-I · 20 Jul 2023 Shift 4"},
+ {type:"mcq",time:30,topic:"GEOGRAPHY",topicHi:"भूगोल",qEn:"Which channel separates the Andaman Islands from the Nicobar Islands?",qHi:"कौन-सा जलडमरूमध्य अंडमान द्वीपसमूह को निकोबार द्वीपसमूह से अलग करता है?",optsEn:["Duncan Passage","8 Degree Channel","10 Degree Channel","9 Degree Channel"],optsHi:["डंकन पैसेज","8 डिग्री चैनल","10 डिग्री चैनल","9 डिग्री चैनल"],correct:2,source:"SSC CGL Tier-I · 22 Oct 2026 Shift 3"},
+ {type:"type",time:90,topic:"HISTORY",topicHi:"इतिहास",qEn:"Which script was predominantly used in the inscriptions of Emperor Ashoka?",qHi:"सम्राट अशोक के अभिलेखों में मुख्यतः किस लिपि का प्रयोग किया गया था?",accepted:["brahmi","brahmee","bramhi","bramhee","brahami","braahmi","barhmi","brahmi lipi","brahmee lipi","bramhi lipi","brahmi script","bramhi script","brhmi","brhmee","brahmi lippee","ब्राह्मी","ब्राह्मि","ब्राहमी","ब्रह्मी","ब्रहमी","ब्राम्ही","ब्राम्हि","ब्राह्मी लिपि","ब्राहमी लिपि","ब्राह्मि लिपि","ब्राम्ही लिपि","ब्रह्मी लिपि","ब्रहमी लिपि"],placeholderEn:"Type one-word answer",placeholderHi:"एक शब्द में उत्तर लिखें",source:"SSC CGL Tier-I · 24 Sep 2025 Shift 2"},
+ {type:"type",time:90,topic:"HISTORY",topicHi:"इतिहास",qEn:"At which place in Bihar was the 1912 session of the Indian National Congress held?",qHi:"1912 में भारतीय राष्ट्रीय कांग्रेस का अधिवेशन बिहार के किस स्थान पर आयोजित हुआ था?",accepted:["bankipore","bankipur","bankipor","bankipoor","bankipure","bankypore","banki pore","banki pur","banki poor","banikpore","bankpore","bankipore patna","bankipur patna","banki pore patna","bankipore bihar","bankiporee","bankiporre","bankipre","bangipore","bnakipore","banikipore","बांकीपुर","बाँकीपुर","बांकीपोर","बाँकीपोर","बांकीपूर","बाँकीपूर","बंकीपुर","बंकीपोर","बाकीपुर","बाकिपुर","बाँकिपुर","बँकीपुर","बांकी पुर","बाँकी पुर","बंकी पुर","बांकीपुर पटना","बाँकीपुर पटना","बंकीपुर पटना"],placeholderEn:"Type one-word answer",placeholderHi:"एक शब्द में उत्तर लिखें",source:"SSC CGL Tier-I · 24 Sep 2024 Shift 2"}
+];
+const deadline=new Date(CONFIG.DEADLINE).getTime();
+function updateCountdown(){const left=deadline-Date.now();if(left<=0){document.getElementById('countdown').style.display='none';document.getElementById('join').style.display='none';document.getElementById('rules').style.display='none';document.getElementById('closed').style.display='block';document.querySelectorAll('.tabs').forEach(x=>x.style.display='none');document.querySelectorAll('#join input,#join select,#join button').forEach(x=>x.disabled=true);return false;}const d=Math.floor(left/86400000),h=Math.floor(left%86400000/3600000),m=Math.floor(left%3600000/60000),s=Math.floor(left%60000/1000);[['cdDays',d],['cdHours',h],['cdMins',m],['cdSecs',s]].forEach(([id,v])=>document.getElementById(id).textContent=String(v).padStart(2,'0'));return true;}
+updateCountdown();setInterval(updateCountdown,1000);
+const quiz=document.getElementById('quiz'), submitBtn=document.getElementById('submit');
+let current=0, timer=null, secondsLeft=0, started=false, answers=Array(5).fill(null), elapsed=Array(5).fill(0), questionStartedAt=0, finished=false, selectedLanguage=null;
+const L={en:{start:'START QUIZ →',question:'QUESTION',mcq:'MULTIPLE CHOICE',type:'TYPE YOUR ANSWER',limit:'SECOND LIMIT',left:'TIME LEFT',instruction:'Answer before the timer ends. When time is up, the quiz automatically moves to the next question.',next:'LOCK ANSWER & NEXT →',finish:'LOCK ANSWER & FINISH',complete:'All 5 questions completed! 🎯',ready:'Your answers are ready. Submit your entry below to save your score.',progress:n=>`${n} of 5 answered`,error:'Before starting, enter your name and a valid Telegram username.',submit:'VERIFYING & SUBMITTING…',submitted:'ENTRY SUBMITTED ✓',retry:'TRY AGAIN →'},hi:{start:'क्विज़ शुरू करें →',question:'प्रश्न',mcq:'बहुविकल्पीय प्रश्न',type:'अपना उत्तर लिखें',limit:'सेकंड की समय-सीमा',left:'बचा हुआ समय',instruction:'समय समाप्त होने से पहले उत्तर दें। समय पूरा होते ही अगला प्रश्न अपने आप खुल जाएगा।',next:'उत्तर लॉक करें और आगे बढ़ें →',finish:'उत्तर लॉक करें और समाप्त करें',complete:'आपके सभी 5 प्रश्न पूरे हो गए! 🎯',ready:'आपके उत्तर तैयार हैं। अपनी एंट्री दर्ज करने के लिए नीचे सबमिट करें।',progress:n=>`${n} में से 5 प्रश्नों के उत्तर दिए`,error:'शुरू करने से पहले अपना नाम और सही Telegram username भरें।',submit:'जमा किया जा रहा है…',submitted:'एंट्री जमा हो गई ✓',retry:'दोबारा प्रयास करें →'}};
+function tr(k,...a){const v=L[selectedLanguage||'en'][k];return typeof v==='function'?v(...a):v;}
+function norm(s){return String(s||"").normalize('NFKC').trim().toLowerCase().replace(/[\s\-_.’']/g,"");}
+function typoDistance(a,b){
+ const x=Array.from(a),y=Array.from(b),m=x.length,n=y.length;
+ if(Math.abs(m-n)>2)return 99;
+ const dp=Array.from({length:m+1},()=>Array(n+1).fill(99));
+ for(let i=0;i<=m;i++)dp[i][0]=i;
+ for(let j=0;j<=n;j++)dp[0][j]=j;
+ for(let i=1;i<=m;i++)for(let j=1;j<=n;j++){
+  // Insertions/deletions and adjacent transpositions are common typing slips.
+  dp[i][j]=Math.min(dp[i-1][j]+1,dp[i][j-1]+1,dp[i-1][j-1]+(x[i-1]===y[j-1]?0:2));
+  if(i>1&&j>1&&x[i-1]===y[j-2]&&x[i-2]===y[j-1])dp[i][j]=Math.min(dp[i][j],dp[i-2][j-2]+1);
+ }
+ return dp[m][n];
+}
+function typedAnswerMatches(answer,accepted){
+ const candidate=norm(answer);
+ if(!candidate)return false;
+ return accepted.some(alias=>{
+  const target=norm(alias);
+  if(candidate===target)return true;
+  const limit=1;
+  return Math.abs(Array.from(candidate).length-Array.from(target).length)<=limit && typoDistance(candidate,target)<=limit;
+ });
+}
+function updateProgress(){const n=answers.filter(v=>v!==null&&v!=="").length;document.getElementById('progress').style.width=(n/5*100)+'%';document.getElementById('progressText').textContent=tr('progress',n);}
+function renderQuestion(){
+ if(current>=questions.length){finishQuiz();return;}
+ const q=questions[current]; secondsLeft=q.time;questionStartedAt=Date.now();
+ quiz.innerHTML='';
+ const d=document.createElement('div');d.className='q';
+ const wm=document.createElement('div');wm.className='quiz-watermark';wm.setAttribute('aria-hidden','true');wm.textContent='F64 • '+(document.getElementById('name').value.trim().slice(0,24)||'GIVEAWAY ENTRY')+' • DO NOT SHARE';d.append(wm);
+ const top=document.createElement('div');top.className='qtop';
+ top.innerHTML=`<span>${tr('question')} 0${current+1} / 05</span><span>${selectedLanguage==='hi'?q.topicHi:q.topic}</span>`;
+ const meta=document.createElement('div');meta.className='qmeta';
+ const type=document.createElement('span');type.className='pill';type.textContent=q.type==='mcq'?tr('mcq'):tr('type');
+ const duration=document.createElement('span');duration.className='pill';duration.textContent=q.time+' '+tr('limit');
+ meta.append(type,duration);
+ const h=document.createElement('h3');h.textContent=selectedLanguage==='hi'?q.qHi:q.qEn;
+ const timerbar=document.createElement('div');timerbar.className='timerbar';timerbar.id='timerbar';
+ timerbar.innerHTML=`<span class="note">${tr('left')}</span><strong id="timerText">${secondsLeft}s</strong>`;
+ d.append(top,meta,h,timerbar);
+ if(q.type==='mcq'){
+   (selectedLanguage==='hi'?q.optsHi:q.optsEn).forEach((a,j)=>{const l=document.createElement('label');l.className='opt';const inp=document.createElement('input');inp.type='radio';inp.name='currentAnswer';inp.value=j;const span=document.createElement('span');span.textContent=a;l.append(inp,span);d.append(l);inp.addEventListener('change',()=>{nextBtn.disabled=false;});});
+ } else {
+   const wrap=document.createElement('div');wrap.className='answerbox';const inp=document.createElement('input');inp.id='typedAnswer';inp.type='text';inp.maxLength=40;inp.autocomplete='off';inp.placeholder=selectedLanguage==='hi'?q.placeholderHi:q.placeholderEn;inp.setAttribute('aria-label',selectedLanguage==='hi'?'एक शब्द में उत्तर':'Your one-word answer');inp.addEventListener('input',()=>{nextBtn.disabled=!inp.value.trim();});wrap.append(inp);d.append(wrap);
+ }
+ const feedback=document.createElement('div');feedback.className='qfeedback';feedback.textContent=tr('instruction');
+ d.append(feedback);
+ const nav=document.createElement('div');nav.className='quiznav';
+ const nextBtn=document.createElement('button');nextBtn.className='primary';nextBtn.type='button';nextBtn.textContent=current===4?tr('finish'):tr('next');nextBtn.disabled=true;
+ nextBtn.onclick=()=>{captureAnswer();advanceQuestion();};
+ nav.append(nextBtn);d.append(nav);quiz.append(d);
+ startTimer();
+}
+function captureAnswer(){
+ const q=questions[current];let val=null;
+ if(q.type==='mcq'){const v=document.querySelector('input[name="currentAnswer"]:checked');val=v?Number(v.value):null;}
+ else {const v=document.getElementById('typedAnswer');val=v?norm(v.value):"";}
+ answers[current]=val;
+ elapsed[current]=Math.min(q.time,Math.max(0,Math.round((Date.now()-questionStartedAt)/1000)));
+ updateProgress();
+}
+function startTimer(){
+ clearInterval(timer);
+ timer=setInterval(()=>{
+  secondsLeft--;
+  const t=document.getElementById('timerText'),bar=document.getElementById('timerbar');
+  if(t)t.textContent=secondsLeft+'s';
+  if(bar&&secondsLeft<=10)bar.classList.add('warning');
+  if(secondsLeft<=0){clearInterval(timer);captureAnswer();advanceQuestion(true);}
+ },1000);
+}
+function advanceQuestion(timedOut=false){
+ clearInterval(timer);
+ if(answers[current]===null)answers[current]=questions[current].type==='mcq'?null:"";
+ current++;
+ if(current>=questions.length){finishQuiz();return;}
+ renderQuestion();
+}
+function finishQuiz(){
+ clearInterval(timer);finished=true;
+ quiz.innerHTML=`<div class="q"><h3>${tr('complete')}</h3><p class="sub">${tr('ready')}</p></div>`;
+ submitBtn.style.display='block';submitBtn.disabled=false;submitBtn.scrollIntoView({behavior:'smooth',block:'center'});
+}
+document.querySelectorAll('.lang-btn').forEach(b=>b.onclick=()=>{if(started)return;selectedLanguage=b.dataset.lang;document.querySelectorAll('.lang-btn').forEach(x=>x.classList.toggle('active',x===b));document.getElementById('startQuiz').disabled=false;document.getElementById('startQuiz').textContent=tr('start');document.getElementById('langHint').textContent=selectedLanguage==='hi'?'आपने हिन्दी चुनी है। सभी प्रश्न हिन्दी में होंगे।':'English selected. All questions will appear in English.';});
+document.getElementById('startQuiz').onclick=()=>{
+ if(!updateCountdown())return;
+ const name=document.getElementById('name').value.trim(),tg=document.getElementById('telegram').value.trim().replace(/^@/,'').toLowerCase();
+ if(!selectedLanguage){const err=document.getElementById('error');err.textContent='Please select Hindi or English first.';err.style.display='block';return;}
+ if(name.length<2||!/^[a-z0-9_]{5,32}$/i.test(tg)){const err=document.getElementById('error');err.textContent=tr('error');err.style.display='block';return;}
+ document.getElementById('error').style.display='none';
+ started=true;document.getElementById('name').disabled=true;document.getElementById('telegram').disabled=true;document.getElementById('source').disabled=true;
+ renderQuestion();
+};
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab,.section').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(b.dataset.tab).classList.add('active')});
+const ready=()=>CONFIG.API_URL.startsWith('https://script.google.com/macros/s/')&&CONFIG.API_URL.endsWith('/exec');
+submitBtn.onclick=async()=>{
+ if(Date.now()>=deadline){updateCountdown();return;}
+ const err=document.getElementById('error'),ok=document.getElementById('success');err.style.display='none';ok.style.display='none';
+ const name=document.getElementById('name').value.trim(),tg=document.getElementById('telegram').value.trim().replace(/^@/,'').toLowerCase();
+ if(!started||!finished){err.textContent='Please complete all 5 timed questions first.';err.style.display='block';return;}
+ if(!ready()){err.textContent='Admin setup pending: the Apps Script /exec URL is not configured in this file.';err.style.display='block';return;}
+ const answerText=questions.map((q,i)=>{
+  const a=answers[i];
+  return q.type==='mcq'?(a===null?'':String(a)):(a||'');
+ });
+ const btn=submitBtn;btn.disabled=true;btn.textContent=tr('submit');
+ try{
+  const res=await fetch(CONFIG.API_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({name,telegram:'@'+tg,source:document.getElementById('source').value,answers:answerText.join('|'),timings:elapsed.join(','),language:selectedLanguage})});
+  const out=await res.json();if(!out.ok)throw new Error(out.error||'Entry could not be saved');
+  if(out.verified!==true || !Number.isInteger(Number(out.score)) || Number(out.score)<0 || Number(out.score)>5) throw new Error('Backend verification response is incomplete. Please ask the admin to redeploy the latest Code.gs version.');
+  ok.innerHTML=`<b>🎉 ENTRY CONFIRMED!</b><br>Your Entry ID: <b>${out.entryId}</b><br><span class="note">Your timed quiz entry has been recorded and your answers were checked by the server. Take a screenshot of this confirmation.</span>`;
+  ok.style.display='block';btn.textContent=tr('submitted');document.querySelectorAll('input,select').forEach(x=>x.disabled=true);window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'});
+ }catch(e){err.textContent=e.message.includes('already')?'This Telegram username has already entered. Only one entry is allowed.':e.message;err.style.display='block';btn.disabled=false;btn.textContent=tr('retry');}
+};
+window.addEventListener('beforeunload',e=>{if(started&&!finished){e.preventDefault();e.returnValue='Quiz is in progress. Leaving may reset your timed attempt.';}});
+
+// F64 quiz protection: copy deterrents without any blur/pause overlay.
+(function(){
+ const quizRoot=()=>document.getElementById('quiz');
+ const isLive=()=>started&&!finished;
+ const inQuiz=e=>{const root=quizRoot();return !!(root&&e.target&&root.contains(e.target));};
+ ['contextmenu','copy','cut','dragstart','paste'].forEach(evt=>{
+  document.addEventListener(evt,function(e){
+   if(isLive()&&inQuiz(e)){
+    e.preventDefault();
+    e.stopPropagation();
+    if(e.stopImmediatePropagation)e.stopImmediatePropagation();
+   }
+  },true);
+ });
+ document.addEventListener('keydown',function(e){
+  if(!isLive())return;
+  const k=String(e.key||'').toLowerCase();
+  const mod=e.ctrlKey||e.metaKey;
+  const screenshotHotkey=k==='printscreen'||((e.metaKey||e.ctrlKey)&&e.shiftKey&&['s','3','4','5'].includes(k));
+  const devtools=(mod&&e.shiftKey&&['i','j','c','k'].includes(k))||k==='f12';
+  const clipboard=mod&&['c','x','v','p','s','u'].includes(k);
+  const selectAll=mod&&k==='a'&&!/^(INPUT|TEXTAREA)$/.test((e.target&&e.target.tagName)||'');
+  if(screenshotHotkey||devtools||clipboard||selectAll){
+   e.preventDefault();
+   e.stopPropagation();
+   if(e.stopImmediatePropagation)e.stopImmediatePropagation();
+  }
+ },true);
+})();
+
+</script></body></html>
